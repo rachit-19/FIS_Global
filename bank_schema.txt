@@ -1,0 +1,6 @@
+create table branch_master(branch_id VARCHAR(6),branch_name VARCHAR(30),branch_city VARCHAR(30),PRIMARY KEY (branch_id));
+
+create table loan_details(customer_number VARCHAR(6),branch_id VARCHAR(6),loan_amount INT,CONSTRAINT PK_loan_details PRIMARY KEY (customer_number,branch_id));
+
+
+create table customer_master(customer_number VARCHAR(6),firstname VARCHAR(30),middlename VARCHAR(30),lastname VARCHAR(30),customer_city VARCHAR(15), customer_contact_no VARCHAR(10), occupation VARCHAR(20), customer_date_of_birth DATE,PRIMARY KEY(customer_number));
