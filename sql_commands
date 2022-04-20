@@ -1,0 +1,35 @@
+[3:26 PM] Praveen Kumar  G S
+create table data( id int, a varchar(255), b varchar(255), c varchar(255));
+
+[3:26 PM] Praveen Kumar  G S
+1 | a1 | b1 | c1
+
+[3:26 PM] Praveen Kumar  G S
+2 | a1 | b1 | c1
+
+[3:27 PM] Praveen Kumar  G S
+select id, 'a' col, a value
+from data
+union all
+select id, 'b' col, b value
+from data
+union all
+select id, 'c' col, c value
+from data;
+
+[3:27 PM] Praveen Kumar  G S
+select t.id,
+c.col,
+case c.col
+when 'a' then a
+when 'b' then b
+when 'c' then c
+end as data
+from data t
+cross join
+(
+select 'a' as col
+union all select 'b'
+union all select 'c'
+) c;
+
